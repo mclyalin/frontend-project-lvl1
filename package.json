@@ -1,0 +1,23 @@
+{
+  "name": "mclyalin-p1",
+  "version": "1.0.0",
+  "description": "FrontendJS training project lvl1 -BrainGames-",
+  "type": "module",
+  "main": "./src/index.js",
+  "bin": {
+    "brain-games": "./src/bin/brain-games.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mclyalin/frontend-project-lvl1.git"
+  },
+  "author": "Michael Lyalin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mclyalin/frontend-project-lvl1/issues"
+  },
+  "homepage": "https://github.com/mclyalin/frontend-project-lvl1#readme"
+}

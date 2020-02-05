@@ -1,7 +1,7 @@
 #Makefile
 
 install:
-	npm install
+	npm ci
 
 start:
 	npx node src/bin/brain-games.js

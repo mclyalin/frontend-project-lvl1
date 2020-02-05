@@ -1,6 +1,6 @@
 {
   "name": "mclyalin-p1",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "FrontendJS training project lvl1 -BrainGames-",
   "type": "module",
   "main": "./src/index.js",
@@ -22,5 +22,10 @@
   "homepage": "https://github.com/mclyalin/frontend-project-lvl1#readme",
   "dependencies": {
     "readline-sync": "^1.4.10"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.20.1"
   }
 }

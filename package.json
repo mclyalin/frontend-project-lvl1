@@ -1,12 +1,13 @@
 {
   "name": "mclyalin-braingames",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "Hexlet training project -BrainGames-",
   "type": "module",
   "main": "./src/index.js",
   "bin": {
     "brain-games": "./src/bin/brain-games.js",
-    "brain-even": "./src/bin/brain-even.js"
+    "brain-even": "./src/bin/brain-even.js",
+    "brain-calc": "./src/bin/brain-even.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

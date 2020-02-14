@@ -1,6 +1,6 @@
 {
   "name": "mclyalin-braingames",
-  "version": "1.6.1",
+  "version": "1.6.2",
   "description": "Hexlet training project -BrainGames-",
   "type": "module",
   "main": "./src/index.js",

@@ -6,6 +6,6 @@
 
 ## Installation and usage example
 
-[![asciicast](https://asciinema.org/a/QBAScEdOy2TOzKvQbPpiGrCut.svg)](https://asciinema.org/a/QBAScEdOy2TOzKvQbPpiGrCut)
+[![asciicast](https://asciinema.org/a/lauMFJHfsbDiiUx1QBihDgVdA.svg)](https://asciinema.org/a/lauMFJHfsbDiiUx1QBihDgVdA)
 
 

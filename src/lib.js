@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 
 // Pairs
-const cons = (x, y) => (f) => f(x, y);
+const cons = (x, y) => (pair) => pair(x, y);
 const car = (pair) => pair((x) => x);
 const cdr = (pair) => pair((x, y) => y);
 //
@@ -17,3 +17,24 @@ export const getRandomInt = (min = 1, max = 99) => (
 export const getAnswer = (request) => (
   readlineSync.question(request)
 );
+
+export const getGcd = (a, b) => {
+  if (b === 0) {
+    return a;
+  }
+  return getGcd(b, a % b);
+};
+
+export const getRandomProgression = (length) => {
+  const step = getRandomInt(2, 9);
+  const firstNum = getRandomInt(1, 100 - (step * length));
+
+  const iter = (acc, num, arr) => {
+    if (acc > length) {
+      return arr;
+    }
+    return iter(acc + 1, num + step, [...arr, num]);
+  };
+
+  return iter(1, firstNum, []);
+};

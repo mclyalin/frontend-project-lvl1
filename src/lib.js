@@ -18,6 +18,8 @@ export const getAnswer = (request) => (
   readlineSync.question(request)
 );
 
+export const isEven = (num) => (num % 2 === 0);
+
 export const getGcd = (a, b) => {
   if (b === 0) {
     return a;
@@ -37,4 +39,18 @@ export const getRandomProgression = (length) => {
   };
 
   return iter(1, firstNum, []);
+};
+
+export const isPrime = (number) => {
+  if (number < 2) {
+    return false;
+  }
+
+  for (let i = 2; i < number; i += 1) {
+    if (number % i === 0) {
+      return false;
+    }
+  }
+
+  return true;
 };

@@ -25,6 +25,7 @@ const gameShell = (game) => {
 
   const name = getAnswer('May I have your name? ');
   console.log(`Hello, ${name}!`);
+
   if (!game) { return; }
 
   const gameResult = play(game);

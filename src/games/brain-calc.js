@@ -9,6 +9,7 @@ const generator = () => {
   const firstOperand = getRandomInt();
   const secondOperand = getRandomInt();
   const operatorType = getRandomInt(0, 2);
+
   switch (operatorType) {
     case 0: //+
       question = `${firstOperand} + ${secondOperand}`;

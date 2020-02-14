@@ -1,10 +1,13 @@
-import { makePair, getRandomInt } from '../lib.js';
+import { makePair, getRandomInt, isEven } from '../lib.js';
 
 const rules = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const generator = () => {
-  const question = getRandomInt();
-  const answer = question % 2 ? 'no' : 'yes';
+  const num = getRandomInt();
+
+  const question = `${num}`;
+  const answer = isEven(num) ? 'yes' : 'no';
+
   return makePair(question, answer);
 };
 

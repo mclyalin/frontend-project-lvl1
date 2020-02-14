@@ -1,6 +1,6 @@
 import { makePair, getRandomInt, isEven } from '../lib.js';
 
-const rules = 'Answer "yes" if the number is even, otherwise answer "no".';
+const gameTask = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const generator = () => {
   const num = getRandomInt();
@@ -11,4 +11,4 @@ const generator = () => {
   return makePair(question, answer);
 };
 
-export default () => makePair(rules, generator);
+export default () => makePair(gameTask, generator);

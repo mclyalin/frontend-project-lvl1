@@ -1,6 +1,6 @@
 import { makePair, getRandomInt } from '../lib.js';
 
-const rules = 'What is the result of the expression?';
+const gameTask = 'What is the result of the expression?';
 
 const generator = () => {
   let question;
@@ -28,4 +28,4 @@ const generator = () => {
   return makePair(question, answer);
 };
 
-export default () => makePair(rules, generator);
+export default () => makePair(gameTask, generator);

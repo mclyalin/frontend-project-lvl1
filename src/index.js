@@ -1,8 +1,8 @@
 import { getFirstItem, getSecondItem, getAnswer } from './lib.js';
 
 const play = (game) => {
-  const rules = getFirstItem(game);
-  console.log(rules);
+  const gameTask = getFirstItem(game);
+  console.log(gameTask);
 
   const generator = getSecondItem(game);
   const numOfRounds = 3;

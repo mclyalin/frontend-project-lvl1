@@ -1,6 +1,6 @@
 import { makePair, getRandomInt, getGcd } from '../lib.js';
 
-const rules = 'Find the greatest common divisor of given numbers.';
+const gameTask = 'Find the greatest common divisor of given numbers.';
 
 const generator = () => {
   const firstNum = getRandomInt();
@@ -12,4 +12,4 @@ const generator = () => {
   return makePair(question, answer);
 };
 
-export default () => makePair(rules, generator);
+export default () => makePair(gameTask, generator);

@@ -1,6 +1,6 @@
 import { makePair, getRandomInt, getRandomProgression } from '../lib.js';
 
-const rules = 'What number is missing in the progression?';
+const gameTask = 'What number is missing in the progression?';
 
 const generator = () => {
   const length = 10;
@@ -15,4 +15,4 @@ const generator = () => {
   return makePair(question, answer);
 };
 
-export default () => makePair(rules, generator);
+export default () => makePair(gameTask, generator);

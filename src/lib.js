@@ -27,9 +27,13 @@ export const getGcd = (a, b) => {
   return getGcd(b, a % b);
 };
 
-export const getRandomProgression = (length) => {
-  const step = getRandomInt(2, 9);
-  const firstNum = getRandomInt(1, 100 - (step * length));
+export const getRandomProgression = (length, border, maxStep) => {
+  const minStep = 2;
+  const step = getRandomInt(minStep, maxStep);
+
+  const minNum = 1;
+  const maxNum = border - (step * length);
+  const firstNum = getRandomInt(minNum, maxNum);
 
   const iter = (acc, num, arr) => {
     if (acc > length) {

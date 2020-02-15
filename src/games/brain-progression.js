@@ -4,7 +4,10 @@ const gameTask = 'What number is missing in the progression?';
 
 const generator = () => {
   const length = 10;
-  const array = getRandomProgression(length);
+  const border = 100;
+  const maxStep = 9;
+
+  const array = getRandomProgression(length, border, maxStep);
   const lastIndex = length - 1;
   const hiddenIndex = getRandomInt(0, lastIndex);
 

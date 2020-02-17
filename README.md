@@ -1,7 +1,7 @@
 # frontend-project-lvl1
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/test_coverage)](https://codeclimate.com/github/codeclimate/codeclimate/test_coverage)
+[![Maintainability](https://api.codeclimate.com/v1/badges/420d0e35b6ad4122ff45/maintainability)](https://codeclimate.com/github/mclyalin/frontend-project-lvl1/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/420d0e35b6ad4122ff45/test_coverage)](https://codeclimate.com/github/mclyalin/frontend-project-lvl1/test_coverage)
 [![Node CI](https://github.com/mclyalin/frontend-project-lvl1/workflows/Node%20CI/badge.svg)](https://github.com/mclyalin/frontend-project-lvl1/actions)
 
 ## Installation and usage example

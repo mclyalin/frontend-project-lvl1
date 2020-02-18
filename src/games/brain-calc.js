@@ -1,4 +1,4 @@
-import { makePair, getRandomInt } from '../lib.js';
+import { makePair, getRandomInt, calculate } from '../lib.js';
 import gameShell from '../index.js';
 
 const gameTask = 'What is the result of the expression?';
@@ -6,9 +6,6 @@ const gameTask = 'What is the result of the expression?';
 const operatorTypes = ['+', '-', '*'];
 
 const generator = () => {
-  let question;
-  let answer;
-
   const firstOperand = getRandomInt();
   const secondOperand = getRandomInt();
 
@@ -16,21 +13,9 @@ const generator = () => {
   const randomIndex = getRandomInt(0, lastIndex);
   const operator = operatorTypes[randomIndex];
 
-  switch (operator) {
-    case '+':
-      question = `${firstOperand} + ${secondOperand}`;
-      answer = `${firstOperand + secondOperand}`;
-      break;
-    case '-':
-      question = `${firstOperand} - ${secondOperand}`;
-      answer = `${firstOperand - secondOperand}`;
-      break;
-    case '*':
-      question = `${firstOperand} * ${secondOperand}`;
-      answer = `${firstOperand * secondOperand}`;
-      break;
-    default:
-  }
+  const question = `${firstOperand} ${operator} ${secondOperand}`;
+  const answer = `${calculate(firstOperand, secondOperand, operator)}`;
+
   return makePair(question, answer);
 };
 

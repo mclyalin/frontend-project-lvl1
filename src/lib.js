@@ -1,4 +1,5 @@
 import readlineSync from 'readline-sync';
+// import { cons, car, cdr } from '@hexlet/pairs';
 
 // Pairs
 const cons = (x, y) => (pair) => pair(x, y);
@@ -57,4 +58,17 @@ export const isPrime = (number) => {
   }
 
   return true;
+};
+
+export const calculate = (a, b, operator) => {
+  switch (operator) {
+    case '+':
+      return a + b;
+    case '-':
+      return a - b;
+    case '*':
+      return a * b;
+    default:
+      return false;
+  }
 };

@@ -1,8 +1,10 @@
-import { makePair, getRandomInt, isEven } from '../lib.js';
+import { makePair, getRandomInt } from '../lib.js';
 import gameShell from '../index.js';
 
 
 const gameTask = 'Answer "yes" if the number is even, otherwise answer "no".';
+
+const isEven = (num) => (num % 2 === 0);
 
 const generator = () => {
   const num = getRandomInt();

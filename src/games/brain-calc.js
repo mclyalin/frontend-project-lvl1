@@ -1,7 +1,20 @@
-import { makePair, getRandomInt, calculate } from '../lib.js';
+import { makePair, getRandomInt } from '../lib.js';
 import gameShell from '../index.js';
 
 const gameTask = 'What is the result of the expression?';
+
+const calculate = (a, b, operator) => {
+  switch (operator) {
+    case '+':
+      return a + b;
+    case '-':
+      return a - b;
+    case '*':
+      return a * b;
+    default:
+      return false;
+  }
+};
 
 const operatorTypes = ['+', '-', '*'];
 

@@ -1,11 +1,12 @@
 import { getFirstItem, getSecondItem, getAnswer } from './lib.js';
 
+const numOfRounds = 3;
+
 const play = (game) => {
   const gameTask = getFirstItem(game);
   console.log(gameTask);
 
   const generator = getSecondItem(game);
-  const numOfRounds = 3;
   for (let i = 1; i <= numOfRounds; i += 1) {
     const quest = generator();
     const question = getFirstItem(quest);

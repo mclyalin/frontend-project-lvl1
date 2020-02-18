@@ -3,6 +3,8 @@ import gameShell from '../index.js';
 
 const gameTask = 'What is the result of the expression?';
 
+const operatorTypes = ['+', '-', '*'];
+
 const generator = () => {
   let question;
   let answer;
@@ -10,10 +12,10 @@ const generator = () => {
   const firstOperand = getRandomInt();
   const secondOperand = getRandomInt();
 
-  const operatorTypes = ['+', '-', '*'];
   const lastIndex = operatorTypes.length - 1;
   const randomIndex = getRandomInt(0, lastIndex);
   const operator = operatorTypes[randomIndex];
+
   switch (operator) {
     case '+':
       question = `${firstOperand} + ${secondOperand}`;

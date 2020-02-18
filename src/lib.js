@@ -1,10 +1,10 @@
 import readlineSync from 'readline-sync';
-// import { cons, car, cdr } from '@hexlet/pairs';
+import { cons, car, cdr } from '@hexlet/pairs';
 
 // Pairs
-const cons = (x, y) => (pair) => pair(x, y);
-const car = (pair) => pair((x) => x);
-const cdr = (pair) => pair((x, y) => y);
+// const cons = (x, y) => (pair) => pair(x, y);
+// const car = (pair) => pair((x) => x);
+// const cdr = (pair) => pair((x, y) => y);
 //
 
 export const makePair = (first, second) => cons(first, second);

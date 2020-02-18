@@ -1,6 +1,6 @@
 {
   "name": "mclyalin-braingames",
-  "version": "1.6.2",
+  "version": "1.6.3",
   "description": "Hexlet training project -BrainGames-",
   "type": "module",
   "main": "./src/index.js",
@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/mclyalin/frontend-project-lvl1#readme",
   "dependencies": {
+    "@hexlet/pairs": "^1.0.10",
     "readline-sync": "^1.4.10"
   },
   "devDependencies": {

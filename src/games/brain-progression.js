@@ -15,7 +15,7 @@ const generator = () => {
 
   const answer = `${array[hiddenIndex]}`;
   array[hiddenIndex] = '..';
-  const question = `${array.join(' ')}`;
+  const question = array.join(' ');
 
   return makePair(question, answer);
 };

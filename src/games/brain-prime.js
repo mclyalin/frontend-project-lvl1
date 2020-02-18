@@ -1,4 +1,5 @@
 import { makePair, getRandomInt, isPrime } from '../lib.js';
+import gameShell from '../index.js';
 
 const gameTask = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
@@ -11,4 +12,6 @@ const generator = () => {
   return makePair(question, answer);
 };
 
-export default () => makePair(gameTask, generator);
+const game = makePair(gameTask, generator);
+
+export default () => gameShell(game);

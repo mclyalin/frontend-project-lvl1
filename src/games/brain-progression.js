@@ -1,4 +1,6 @@
 import { makePair, getRandomInt, getRandomProgression } from '../lib.js';
+import gameShell from '../index.js';
+
 
 const gameTask = 'What number is missing in the progression?';
 
@@ -18,4 +20,6 @@ const generator = () => {
   return makePair(question, answer);
 };
 
-export default () => makePair(gameTask, generator);
+const game = makePair(gameTask, generator);
+
+export default () => gameShell(game);

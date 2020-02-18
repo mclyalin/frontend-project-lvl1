@@ -1,4 +1,5 @@
 import { makePair, getRandomInt } from '../lib.js';
+import gameShell from '../index.js';
 
 const gameTask = 'What is the result of the expression?';
 
@@ -8,18 +9,21 @@ const generator = () => {
 
   const firstOperand = getRandomInt();
   const secondOperand = getRandomInt();
-  const operatorType = getRandomInt(0, 2);
 
-  switch (operatorType) {
-    case 0: //+
+  const operatorTypes = ['+', '-', '*'];
+  const lastIndex = operatorTypes.length - 1;
+  const randomIndex = getRandomInt(0, lastIndex);
+  const operator = operatorTypes[randomIndex];
+  switch (operator) {
+    case '+':
       question = `${firstOperand} + ${secondOperand}`;
       answer = `${firstOperand + secondOperand}`;
       break;
-    case 1: //-
+    case '-':
       question = `${firstOperand} - ${secondOperand}`;
       answer = `${firstOperand - secondOperand}`;
       break;
-    case 2: //*
+    case '*':
       question = `${firstOperand} * ${secondOperand}`;
       answer = `${firstOperand * secondOperand}`;
       break;
@@ -28,4 +32,6 @@ const generator = () => {
   return makePair(question, answer);
 };
 
-export default () => makePair(gameTask, generator);
+const game = makePair(gameTask, generator);
+
+export default () => gameShell(game);

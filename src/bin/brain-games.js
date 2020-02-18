@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import gameShell from '../index.js';
+import brainGames from '../games/brain-games.js';
 
-gameShell();
+brainGames();

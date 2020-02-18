@@ -12,7 +12,7 @@ const play = (game) => {
     const correctAnswer = getSecondItem(quest);
     const answer = getAnswer(`Question: ${question}\nYour answer: `);
     if (answer !== correctAnswer) {
-      console.log(`'${answer}' is wrong answer ;). Correct answer was '${correctAnswer}'`);
+      console.log(`"${answer}" is wrong answer ;). Correct answer was "${correctAnswer}"`);
       return false;
     }
     console.log('Correct!');

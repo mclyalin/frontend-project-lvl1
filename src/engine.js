@@ -17,7 +17,7 @@ const play = (gameTask, generateQuest, numOfRounds) => {
   return true;
 };
 
-const gameShell = (gameTask, generateQuest) => {
+const gameShell = (gameTask, generateQuest, numOfRounds = 3) => {
   console.log('Welcome to the Brain Games!');
 
   const name = getUserResponse('May I have your name? ');
@@ -25,7 +25,6 @@ const gameShell = (gameTask, generateQuest) => {
 
   if (!gameTask) { return; }
 
-  const numOfRounds = 3;
   const gameResult = play(gameTask, generateQuest, numOfRounds);
   if (gameResult) {
     console.log(`Congratulations, ${name}!`);

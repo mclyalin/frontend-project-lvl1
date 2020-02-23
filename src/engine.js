@@ -1,6 +1,6 @@
 import { getQuestion, getCorrectAnswer, getUserResponse } from './lib.js';
 
-const play = (gameTask, generateQuest, numOfRounds) => {
+const play = (gameTask, generateQuest, numOfRounds = 3) => {
   console.log(gameTask);
   for (let i = 1; i <= numOfRounds; i += 1) {
     const quest = generateQuest();
@@ -17,7 +17,7 @@ const play = (gameTask, generateQuest, numOfRounds) => {
   return true;
 };
 
-const gameShell = (gameTask, generateQuest, numOfRounds = 3) => {
+const gameShell = (gameTask, generateQuest) => {
   console.log('Welcome to the Brain Games!');
 
   const name = getUserResponse('May I have your name? ');
@@ -25,7 +25,7 @@ const gameShell = (gameTask, generateQuest, numOfRounds = 3) => {
 
   if (!gameTask) { return; }
 
-  const gameResult = play(gameTask, generateQuest, numOfRounds);
+  const gameResult = play(gameTask, generateQuest);
   if (gameResult) {
     console.log(`Congratulations, ${name}!`);
   } else {

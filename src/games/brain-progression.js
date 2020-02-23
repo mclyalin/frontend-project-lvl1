@@ -1,43 +1,41 @@
-import { makePair, getRandomInt } from '../lib.js';
+import { makeQuest, getRandomInt } from '../lib.js';
 import gameShell from '../index.js';
 
 
 const gameTask = 'What number is missing in the progression?';
 
-const getRandomProgression = (length, border, maxStep) => {
+const generateProgression = (start, step, length) => {
+  const iter = (counter, num, acc) => {
+    if (counter > length) {
+      return acc;
+    }
+    return iter(counter + 1, num + step, [...acc, num]);
+  };
+
+  return iter(1, start, []);
+};
+
+const generateQuest = () => {
+  const length = 10;
+  const border = 100;
+
   const minStep = 2;
+  const maxStep = 9;
   const step = getRandomInt(minStep, maxStep);
 
   const minNum = 1;
   const maxNum = border - (step * length);
-  const firstNum = getRandomInt(minNum, maxNum);
+  const num = getRandomInt(minNum, maxNum);
 
-  const iter = (acc, num, arr) => {
-    if (acc > length) {
-      return arr;
-    }
-    return iter(acc + 1, num + step, [...arr, num]);
-  };
+  const progression = generateProgression(num, step, length);
+  const index = getRandomInt(0, length - 1);
+  const correctAnswer = progression[index];
 
-  return iter(1, firstNum, []);
+  const hidden = '..';
+  progression[index] = hidden;
+  const question = progression.join(' ');
+
+  return makeQuest(question, correctAnswer.toString());
 };
 
-const generator = () => {
-  const length = 10;
-  const border = 100;
-  const maxStep = 9;
-
-  const array = getRandomProgression(length, border, maxStep);
-  const lastIndex = length - 1;
-  const hiddenIndex = getRandomInt(0, lastIndex);
-
-  const answer = `${array[hiddenIndex]}`;
-  array[hiddenIndex] = '..';
-  const question = array.join(' ');
-
-  return makePair(question, answer);
-};
-
-const game = makePair(gameTask, generator);
-
-export default () => gameShell(game);
+export default () => gameShell(gameTask, generateQuest);

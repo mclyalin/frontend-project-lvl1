@@ -1,4 +1,4 @@
-import { makePair, getRandomInt } from '../lib.js';
+import { makeQuest, getRandomInt } from '../lib.js';
 import gameShell from '../index.js';
 
 const gameTask = 'Answer "yes" if given number is prime. Otherwise answer "no".';
@@ -7,24 +7,24 @@ const isPrime = (num) => {
   if (num < 2) {
     return false;
   }
+  const maxDiv = num / 2;
+  let div = 2;
 
-  for (let i = 2; i < num; i += 1) {
-    if (num % i === 0) {
+  while (div <= maxDiv) {
+    if (num % div === 0) {
       return false;
     }
+    div += 1;
   }
+
   return true;
 };
 
-const generator = () => {
-  const number = getRandomInt();
+const generateQuest = () => {
+  const question = getRandomInt();
+  const correctAnswer = isPrime(question) ? 'yes' : 'no';
 
-  const question = `${number}`;
-  const answer = isPrime(number) ? 'yes' : 'no';
-
-  return makePair(question, answer);
+  return makeQuest(question, correctAnswer.toString());
 };
 
-const game = makePair(gameTask, generator);
-
-export default () => gameShell(game);
+export default () => gameShell(gameTask, generateQuest);

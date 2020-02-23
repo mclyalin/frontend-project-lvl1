@@ -1,4 +1,4 @@
-import { makePair, getRandomInt } from '../lib.js';
+import { makeQuest, getRandomInt } from '../lib.js';
 import gameShell from '../index.js';
 
 const gameTask = 'What is the result of the expression?';
@@ -16,22 +16,20 @@ const calculate = (a, b, operator) => {
   }
 };
 
-const operatorTypes = ['+', '-', '*'];
+const operators = ['+', '-', '*'];
 
-const generator = () => {
+const generateQuest = () => {
   const firstOperand = getRandomInt();
   const secondOperand = getRandomInt();
 
-  const lastIndex = operatorTypes.length - 1;
-  const randomIndex = getRandomInt(0, lastIndex);
-  const operator = operatorTypes[randomIndex];
+  const lastIndex = operators.length - 1;
+  const index = getRandomInt(0, lastIndex);
+  const operator = operators[index];
 
   const question = `${firstOperand} ${operator} ${secondOperand}`;
-  const answer = `${calculate(firstOperand, secondOperand, operator)}`;
+  const correctAnswer = calculate(firstOperand, secondOperand, operator);
 
-  return makePair(question, answer);
+  return makeQuest(question, correctAnswer.toString());
 };
 
-const game = makePair(gameTask, generator);
-
-export default () => gameShell(game);
+export default () => gameShell(gameTask, generateQuest);

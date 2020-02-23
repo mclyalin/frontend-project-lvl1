@@ -1,17 +1,13 @@
-import { getFirstItem, getSecondItem, getAnswer } from './lib.js';
+import { getQuestion, getCorrectAnswer, getUserResponse } from './lib.js';
 
-const numOfRounds = 3;
-
-const play = (game) => {
-  const gameTask = getFirstItem(game);
+const play = (gameTask, generateQuest, numOfRounds) => {
   console.log(gameTask);
-
-  const generator = getSecondItem(game);
   for (let i = 1; i <= numOfRounds; i += 1) {
-    const quest = generator();
-    const question = getFirstItem(quest);
-    const correctAnswer = getSecondItem(quest);
-    const answer = getAnswer(`Question: ${question}\nYour answer: `);
+    const quest = generateQuest();
+    const question = getQuestion(quest);
+    const correctAnswer = getCorrectAnswer(quest);
+    const answer = getUserResponse(`Question: ${question}\nYour answer: `);
+
     if (answer !== correctAnswer) {
       console.log(`"${answer}" is wrong answer ;). Correct answer was "${correctAnswer}"`);
       return false;
@@ -21,15 +17,16 @@ const play = (game) => {
   return true;
 };
 
-const gameShell = (game) => {
+const gameShell = (gameTask, generateQuest) => {
   console.log('Welcome to the Brain Games!');
 
-  const name = getAnswer('May I have your name? ');
+  const name = getUserResponse('May I have your name? ');
   console.log(`Hello, ${name}!`);
 
-  if (!game) { return; }
+  if (!gameTask) { return; }
 
-  const gameResult = play(game);
+  const numOfRounds = 3;
+  const gameResult = play(gameTask, generateQuest, numOfRounds);
   if (gameResult) {
     console.log(`Congratulations, ${name}!`);
   } else {

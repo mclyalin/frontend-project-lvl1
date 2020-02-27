@@ -1,6 +1,8 @@
 import { getQuestion, getCorrectAnswer, getUserResponse } from './lib.js';
 
-const play = (gameTask, generateQuest, numOfRounds = 3) => {
+const numOfRounds = 3;
+
+const play = (gameTask, generateQuest) => {
   console.log(gameTask);
   for (let i = 1; i <= numOfRounds; i += 1) {
     const quest = generateQuest();

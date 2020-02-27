@@ -23,8 +23,8 @@ const generateQuest = () => {
   const secondOperand = getRandomInt();
 
   const lastIndex = operators.length - 1;
-  const index = getRandomInt(0, lastIndex);
-  const operator = operators[index];
+  const operatorIndex = getRandomInt(0, lastIndex);
+  const operator = operators[operatorIndex];
 
   const question = `${firstOperand} ${operator} ${secondOperand}`;
   const correctAnswer = calculate(firstOperand, secondOperand, operator);

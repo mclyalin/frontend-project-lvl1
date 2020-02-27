@@ -25,14 +25,14 @@ const generateQuest = () => {
 
   const minNum = 1;
   const maxNum = border - (step * length);
-  const num = getRandomInt(minNum, maxNum);
+  const startNum = getRandomInt(minNum, maxNum);
 
-  const progression = generateProgression(num, step, length);
-  const index = getRandomInt(0, length - 1);
-  const correctAnswer = progression[index];
+  const progression = generateProgression(startNum, step, length);
+  const hiddenElementIndex = getRandomInt(0, length - 1);
+  const correctAnswer = progression[hiddenElementIndex];
 
-  const hidden = '..';
-  progression[index] = hidden;
+  const hiddenElement = '..';
+  progression[hiddenElementIndex] = hiddenElement;
   const question = progression.join(' ');
 
   return makeQuest(question, correctAnswer.toString());
